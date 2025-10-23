@@ -389,9 +389,9 @@ export default function ModuleStepsContainer({
 				<div>
 					<div className="steps-container-header">
 						<div className="brand-logo" onClick={handleLogoClick}>
-							<img src="/Logos/signoz-brand-logo.svg" alt="SigNoz" />
+							<img src="/Logos/trueview-brand-logo.svg" alt="Trueview" />
 
-							<div className="brand-logo-name">SigNoz</div>
+							<div className="brand-logo-name">Trueview</div>
 						</div>
 					</div>
 
@@ -482,13 +482,13 @@ export default function ModuleStepsContainer({
 							step: activeStep?.step?.id,
 							screen: 'Onboarding',
 						}}
-						eventName="Onboarding V2: Facing Issues Sending Data to SigNoz"
+						eventName="Onboarding V2: Facing Issues Sending Data to Trueview"
 						message={onboardingHelpMessage(
 							selectedDataSource?.name || '',
 							activeStep?.module?.id,
 						)}
-						buttonText="Facing issues sending data to SigNoz?"
-						onHoverText="Click here to get help with sending data to SigNoz"
+						buttonText="Facing issues sending data to Trueview?"
+						onHoverText="Click here to get help with sending data to Trueview"
 					/>
 				</div>
 			</div>

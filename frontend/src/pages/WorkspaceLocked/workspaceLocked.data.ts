@@ -15,7 +15,7 @@ export const infoData = [
 		id: 'infoBlock-3',
 		title: 'Powering observability for teams of all sizes',
 		description:
-			'Hundreds of companies ⎯from early-stage start-ups to public enterprises use SigNoz to build more reliable products.',
+			'Hundreds of companies ⎯from early-stage start-ups to public enterprises use Trueview to build more reliable products.',
 	},
 ];
 
@@ -48,7 +48,7 @@ export const customerStoriesData = [
 		role: 'Founder & CEO at Convoy',
 		customerName: 'Convoy',
 		message:
-			"We use OTel with SigNoz to spot redundant database connect calls. For example, we found that our database driver wasn't using the connection pool even though the documentation claimed otherwise.",
+			"We use OTel with Trueview to spot redundant database connect calls. For example, we found that our database driver wasn't using the connection pool even though the documentation claimed otherwise.",
 		link:
 			'https://www.linkedin.com/feed/update/urn:li:activity:7212117589068591105/',
 	},
@@ -59,7 +59,7 @@ export const customerStoriesData = [
 		role: 'Tech Lead at Nudge',
 		customerName: 'Nudge',
 		message:
-			'SigNoz is one of the best observability tools you can self-host hands down. And they are always there to help on their slack channel when needed.',
+			'Trueview is one of the best observability tools you can self-host hands down. And they are always there to help on their slack channel when needed.',
 		link:
 			'https://www.linkedin.com/posts/dhruv-garg79_signoz-docker-kubernetes-activity-7205163679028240384-Otlb/',
 	},
@@ -70,7 +70,7 @@ export const customerStoriesData = [
 		role: 'CTO at Wombo AI',
 		customerName: 'Wombo AI',
 		message:
-			'We use SigNoz and have been loving it - can definitely handle scale.',
+			'We use Trueview and have been loving it - can definitely handle scale.',
 		link: 'https://x.com/notorious_VB/status/1701773119696904242',
 	},
 	{
@@ -80,7 +80,7 @@ export const customerStoriesData = [
 		role: 'Engineering at Azodha',
 		customerName: 'Azodha',
 		message:
-			'Recently moved metrics and logging to SigNoz. Gotta say, absolutely loving the tool.',
+			'Recently moved metrics and logging to Trueview. Gotta say, absolutely loving the tool.',
 		link: 'https://x.com/PranayNarang/status/1676247073396752387',
 	},
 	{
@@ -90,7 +90,7 @@ export const customerStoriesData = [
 		role: 'Seasoned Rails Dev & Founder',
 		customerName: '',
 		message:
-			"But wow, I'm glad I tried SigNoz. Setting up SigNoz was easy—they provide super helpful instructions along with a docker-compose file.",
+			"But wow, I'm glad I tried Trueview. Setting up Trueview was easy—they provide super helpful instructions along with a docker-compose file.",
 		link:
 			'https://www.linkedin.com/feed/update/urn:li:activity:7181011853915926528/',
 	},
@@ -111,7 +111,7 @@ export const customerStoriesData = [
 		role: 'Data Engineer at Ctlyst.id',
 		customerName: 'Ctlyst.id',
 		message:
-			'Monitoring done. Thanks to SigNoz, I don’t have to deal with Grafana, Loki, Prometheus, and Jaeger separately.',
+			'Monitoring done. Thanks to Trueview, I don’t have to deal with Grafana, Loki, Prometheus, and Jaeger separately.',
 		link: 'https://x.com/gofrendiasgard/status/1680139003658641408',
 	},
 	{
@@ -131,21 +131,21 @@ export const faqData = [
 	{
 		key: 'signoz-cloud-vs-community',
 		label:
-			'What is the difference between SigNoz Cloud(Teams) and Community Edition?',
+			'What is the difference between Trueview Cloud(Teams) and Community Edition?',
 		children:
-			'You can self-host and manage the community edition yourself. You should choose SigNoz Cloud if you don’t want to worry about managing the SigNoz cluster. There are some exclusive features like SSO & SAML support, which come with SigNoz cloud offering. Our team also offers support on the initial configuration of dashboards & alerts and advises on best practices for setting up your observability stack in the SigNoz cloud offering.',
+			'You can self-host and manage the community edition yourself. You should choose Trueview Cloud if you don’t want to worry about managing the Trueview cluster. There are some exclusive features like SSO & SAML support, which come with Trueview cloud offering. Our team also offers support on the initial configuration of dashboards & alerts and advises on best practices for setting up your observability stack in the Trueview cloud offering.',
 	},
 	{
 		key: 'calc-for-metrics',
 		label: 'How are number of samples calculated for metrics pricing?',
 		children:
-			"If a timeseries sends data every 30s, then it will generate 2 samples per min. So, if you have 10,000 time series sending data every 30s then you will be sending 20,000 samples per min to SigNoz. This will be around 864 mn samples per month and would cost 86.4 USD/month. Here's an explainer video on how metrics pricing is calculated - Link: https://vimeo.com/973012522",
+			"If a timeseries sends data every 30s, then it will generate 2 samples per min. So, if you have 10,000 time series sending data every 30s then you will be sending 20,000 samples per min to Trueview. This will be around 864 mn samples per month and would cost 86.4 USD/month. Here's an explainer video on how metrics pricing is calculated - Link: https://vimeo.com/973012522",
 	},
 	{
 		key: 'enterprise-support-plans',
 		label: 'Do you offer enterprise support plans?',
 		children:
-			'Yes, feel free to reach out to us on hello@signoz.io if you need a dedicated support plan or paid support for setting up your initial SigNoz setup.',
+			'Yes, feel free to reach out to us on hello@signoz.io if you need a dedicated support plan or paid support for setting up your initial Trueview setup.',
 	},
 	{
 		key: 'who-should-use-enterprise-plans',

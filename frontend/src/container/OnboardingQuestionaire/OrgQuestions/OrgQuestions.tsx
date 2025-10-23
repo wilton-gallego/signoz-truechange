@@ -187,7 +187,7 @@ function OrgQuestions({
 				{user?.displayName ? `Welcome, ${user.displayName}!` : 'Welcome!'}
 			</Typography.Title>
 			<Typography.Paragraph className="sub-title">
-				We&apos;ll help you get the most out of SigNoz, whether you&apos;re new to
+				We&apos;ll help you get the most out of Trueview, whether you&apos;re new to
 				observability or a seasoned pro.
 			</Typography.Paragraph>
 

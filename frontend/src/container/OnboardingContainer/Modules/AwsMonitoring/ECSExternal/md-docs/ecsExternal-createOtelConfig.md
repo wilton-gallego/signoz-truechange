@@ -1,6 +1,6 @@
-## Create SigNoz OTel Collector Configuration file 
+## Create Trueview OTel Collector Configuration file 
 
-To setup the SigNoz OTel Collector config, follow these two steps:
+To setup the Trueview OTel Collector config, follow these two steps:
 
 ### Step 1: 
 Navigate to the AWS Parameter store and create a new parameter named **/ecs/signoz/otelcol-daemon.yaml**
@@ -8,11 +8,11 @@ Navigate to the AWS Parameter store and create a new parameter named **/ecs/sign
 ### Step 2:
 Download the otelcol-daemon YAML configuration file:
 ```bash
-wget https://github.com/SigNoz/benchmark/raw/main/ecs/otelcol-daemon.yaml
+wget https://github.com/Trueview/benchmark/raw/main/ecs/otelcol-daemon.yaml
 ```
 &nbsp;
 
-Update `{region}` and `SIGNOZ_INGESTION_KEY` values in your YAML configuration file with your SigNoz cloud values mentioned below:
+Update `{region}` and `SIGNOZ_INGESTION_KEY` values in your YAML configuration file with your Trueview cloud values mentioned below:
 
 {region} : `{{REGION}}`
 

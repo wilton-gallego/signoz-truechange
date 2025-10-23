@@ -315,7 +315,7 @@ export default function Home(): JSX.Element {
 				{showBanner && (
 					<div className="home-container-banner">
 						<div className="home-container-banner-content">
-							Big News: SigNoz Community Edition now available with SSO (Google OAuth)
+							Big News: Trueview Community Edition now available with SSO (Google OAuth)
 							and API keys -
 							<a
 								href="https://signoz.io/blog/open-source-signoz-now-available-with-sso-and-api-keys/"
@@ -382,7 +382,7 @@ export default function Home(): JSX.Element {
 			<div className="home-content">
 				<div className="home-left-content">
 					<DataSourceInfo
-						dataSentToSigNoz={
+						dataSentToTrueview={
 							isLogsIngestionActive ||
 							isTracesIngestionActive ||
 							isMetricsIngestionActive

@@ -68,7 +68,7 @@ function SignUp(): JSX.Element {
 				email: responseDetails.email,
 				name: responseDetails.name,
 				company_name: responseDetails.organization,
-				source: 'SigNoz Cloud',
+				source: 'Trueview Cloud',
 			});
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -197,12 +197,12 @@ function SignUp(): JSX.Element {
 			<div className="signup-page-content">
 				<div className="brand-container">
 					<img
-						src="/Logos/signoz-brand-logo.svg"
+						src="/Logos/trueview-brand-logo.svg"
 						alt="logo"
 						className="brand-logo"
 					/>
 
-					<div className="brand-title">SigNoz</div>
+					<div className="brand-title">Trueview</div>
 				</div>
 
 				<FormContainer
@@ -214,7 +214,7 @@ function SignUp(): JSX.Element {
 					<div className="signup-form-header">
 						<Typography.Paragraph className="signup-form-header-text">
 							You&apos;re almost in. Create a password to start monitoring your
-							applications with SigNoz.
+							applications with Trueview.
 						</Typography.Paragraph>
 					</div>
 

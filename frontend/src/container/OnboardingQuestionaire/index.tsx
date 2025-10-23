@@ -18,9 +18,9 @@ import { useEffect, useState } from 'react';
 import { useMutation, useQuery } from 'react-query';
 
 import {
-	AboutSigNozQuestions,
+	AboutTrueviewQuestions,
 	SignozDetails,
-} from './AboutSigNozQuestions/AboutSigNozQuestions';
+} from './AboutTrueviewQuestions/AboutTrueviewQuestions';
 import InviteTeamMembers from './InviteTeamMembers/InviteTeamMembers';
 import { OnboardingHeader } from './OnboardingHeader/OnboardingHeader';
 import OptimiseSignozNeeds, {
@@ -229,7 +229,7 @@ function OnboardingQuestionaire(): JSX.Element {
 				)}
 
 				{currentStep === 2 && (
-					<AboutSigNozQuestions
+					<AboutTrueviewQuestions
 						signozDetails={signozDetails}
 						setSignozDetails={setSignozDetails}
 						onBack={(): void => {

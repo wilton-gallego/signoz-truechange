@@ -9,12 +9,12 @@ function Login(): JSX.Element {
 			<div className="login-page-content">
 				<div className="brand-container">
 					<img
-						src="/Logos/signoz-brand-logo.svg"
+						src="/Logos/trueview-brand-logo.svg"
 						alt="logo"
 						className="brand-logo"
 					/>
 
-					<div className="brand-title">SigNoz</div>
+					<div className="brand-title">Trueview</div>
 				</div>
 
 				<LoginContainer />

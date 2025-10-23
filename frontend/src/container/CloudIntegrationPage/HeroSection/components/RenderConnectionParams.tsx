@@ -43,19 +43,19 @@ function RenderConnectionFields({
 			{!connectionParams?.signoz_api_url && (
 				<Form.Item
 					name="signoz_api_url"
-					label="SigNoz API URL"
-					rules={[{ required: true, message: 'Please enter SigNoz API URL' }]}
+					label="Trueview API URL"
+					rules={[{ required: true, message: 'Please enter Trueview API URL' }]}
 				>
-					<Input placeholder="Enter SigNoz API URL" disabled={isFormDisabled} />
+					<Input placeholder="Enter Trueview API URL" disabled={isFormDisabled} />
 				</Form.Item>
 			)}
 			{!connectionParams?.signoz_api_key && (
 				<Form.Item
 					name="signoz_api_key"
-					label="SigNoz API KEY"
-					rules={[{ required: true, message: 'Please enter SigNoz API Key' }]}
+					label="Trueview API KEY"
+					rules={[{ required: true, message: 'Please enter Trueview API Key' }]}
 				>
-					<Input placeholder="Enter SigNoz API Key" disabled={isFormDisabled} />
+					<Input placeholder="Enter Trueview API Key" disabled={isFormDisabled} />
 				</Form.Item>
 			)}
 		</Form.Item>

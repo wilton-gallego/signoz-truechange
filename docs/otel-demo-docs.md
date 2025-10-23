@@ -1,28 +1,28 @@
-# Configuring OpenTelemetry Demo App with SigNoz
+# Configuring OpenTelemetry Demo App with Trueview
 
-[The OpenTelemetry Astronomy Shop](https://github.com/open-telemetry/opentelemetry-demo) is an e-commerce web application, with **15 core microservices** in a **distributed system** which communicate over gRPC. Designed as a **polyglot** environment, it leverages a diverse set of programming languages, including Go, Python, .NET, Java, and others, showcasing cross-language instrumentation with OpenTelemetry. The intention is to get a quickstart application to send data and experience SigNoz firsthand.
+[The OpenTelemetry Astronomy Shop](https://github.com/open-telemetry/opentelemetry-demo) is an e-commerce web application, with **15 core microservices** in a **distributed system** which communicate over gRPC. Designed as a **polyglot** environment, it leverages a diverse set of programming languages, including Go, Python, .NET, Java, and others, showcasing cross-language instrumentation with OpenTelemetry. The intention is to get a quickstart application to send data and experience Trueview firsthand.
 
-This guide provides a step-by-step walkthrough for setting up the **OpenTelemetry Demo App** with **SigNoz** as backend for observability. It outlines steps to export telemetry data to **SigNoz self-hosted with Docker**, **SigNoz self-hosted with Kubernetes** and **SigNoz cloud**. 
+This guide provides a step-by-step walkthrough for setting up the **OpenTelemetry Demo App** with **Trueview** as backend for observability. It outlines steps to export telemetry data to **Trueview self-hosted with Docker**, **Trueview self-hosted with Kubernetes** and **Trueview cloud**. 
 <br/>
 
 __Table of Contents__
-- [Send data to SigNoz Self-hosted with Docker](#send-data-to-signoz-self-hosted-with-docker)
+- [Send data to Trueview Self-hosted with Docker](#send-data-to-signoz-self-hosted-with-docker)
   - [Prerequisites](#prerequisites)
   - [Clone the OpenTelemetry Demo App Repository](#clone-the-opentelemetry-demo-app-repository)
   - [Modify OpenTelemetry Collector Config](#modify-opentelemetry-collector-config)
   - [Start the OpenTelemetry Demo App](#start-the-opentelemetry-demo-app)
-  - [Monitor with SigNoz (Docker)](#monitor-with-signoz-docker)
-- [Send data to SigNoz Self-hosted with Kubernetes](#send-data-to-signoz-self-hosted-with-kubernetes)
+  - [Monitor with Trueview (Docker)](#monitor-with-signoz-docker)
+- [Send data to Trueview Self-hosted with Kubernetes](#send-data-to-signoz-self-hosted-with-kubernetes)
   - [Prerequisites](#prerequisites-1)
   - [Install Helm Repo and Charts](#install-helm-repo-and-charts)
   - [Start the OpenTelemetry Demo App](#start-the-opentelemetry-demo-app-1)
-  - [Monitor with SigNoz (Kubernetes)](#monitor-with-signoz-kubernetes)
+  - [Monitor with Trueview (Kubernetes)](#monitor-with-signoz-kubernetes)
 - [What's next](#whats-next)
 
 
-# Send data to SigNoz Self-hosted with Docker
+# Send data to Trueview Self-hosted with Docker
 
-In this guide you will install the OTel demo application using Docker and send telemetry data to SigNoz hosted with Docker, referred as SigNoz [Docker] from now.
+In this guide you will install the OTel demo application using Docker and send telemetry data to Trueview hosted with Docker, referred as Trueview [Docker] from now.
 
 
 ## Prerequisites
@@ -46,7 +46,7 @@ By default, the collector in the demo application will merge the configuration f
 1. otelcol-config.yml &nbsp;&nbsp;[we don't touch this]
 2. otelcol-config-extras.yml &nbsp;&nbsp; [we modify this]
 
-To add SigNoz [Docker] as the backend, open the file `src/otel-collector/otelcol-config-extras.yml` and add the following,
+To add Trueview [Docker] as the backend, open the file `src/otel-collector/otelcol-config-extras.yml` and add the following,
 ```yaml
 exporters:
   otlp:
@@ -66,14 +66,14 @@ service:
       exporters: [otlp]
 ```
 
-The SigNoz OTel collector [sigNoz's otel-collector service] listens at 4317 port on localhost. When the OTel demo app is running within a Docker container and needs to transmit telemetry data to SigNoz, it cannot directly reference 'localhost' as this would refer to the container's own internal network. Instead, Docker provides a special DNS name, `host.docker.internal`, which resolves to the host machine's IP address from within containers. By configuring the OpenTelemetry Demo application to send data to `host.docker.internal:4317`, we establish a network path that allows the containerized application to transmit telemetry data across the container boundary to the SigNoz OTel collector running on the host machine's port 4317.
+The Trueview OTel collector [sigNoz's otel-collector service] listens at 4317 port on localhost. When the OTel demo app is running within a Docker container and needs to transmit telemetry data to Trueview, it cannot directly reference 'localhost' as this would refer to the container's own internal network. Instead, Docker provides a special DNS name, `host.docker.internal`, which resolves to the host machine's IP address from within containers. By configuring the OpenTelemetry Demo application to send data to `host.docker.internal:4317`, we establish a network path that allows the containerized application to transmit telemetry data across the container boundary to the Trueview OTel collector running on the host machine's port 4317.
 
 >
 > Note: When merging extra configuration values with the existing collector config (`src/otel-collector/otelcol-config.yml`), objects are merged and arrays are replaced resulting in previous pipeline configurations getting overridden.
  The spanmetrics exporter must be included in the array of exporters for the traces pipeline if overridden. Not including this exporter will result in an error.
 >
 <br>
-<u>To send data to SigNoz Cloud</u>
+<u>To send data to Trueview Cloud</u>
 
 If you want to send data to cloud instead, open the file `src/otel-collector/otelcol-config-extras.yml` and add the following,
 ```yaml
@@ -101,7 +101,7 @@ Remember to replace the region and ingestion key with proper values as obtained 
 
 ## Start the OpenTelemetry Demo App
 
-Both SigNoz and OTel demo app [frontend-proxy service, to be accurate] share common port allocation at 8080. To prevent port allocation conflicts, modify the OTel demo application config to use port 8081 as the `ENVOY_PORT` value as shown below, and run docker compose command.
+Both Trueview and OTel demo app [frontend-proxy service, to be accurate] share common port allocation at 8080. To prevent port allocation conflicts, modify the OTel demo application config to use port 8081 as the `ENVOY_PORT` value as shown below, and run docker compose command.
 
 ```sh
 ENVOY_PORT=8081 docker compose up -d
@@ -115,20 +115,20 @@ The result should look similar to this,
 
 
 
-Navigate to `http://localhost:8081/` where you can access OTel demo app UI. Generate some traffic to send to SigNoz [Docker].
+Navigate to `http://localhost:8081/` where you can access OTel demo app UI. Generate some traffic to send to Trueview [Docker].
 
-## Monitor with SigNoz [Docker]
+## Monitor with Trueview [Docker]
 Signoz exposes its UI at `http://localhost:8080/`. You should be able to see multiple services listed down as shown in the snapshot below.
 
 
 ![](/docs/img/otel-demo-services.png)
 
-This verifies that your OTel demo app is successfully sending telemetry data to SigNoz [Docker] as expected. 
+This verifies that your OTel demo app is successfully sending telemetry data to Trueview [Docker] as expected. 
 
 
-# Send data to SigNoz Self-hosted with Kubernetes
+# Send data to Trueview Self-hosted with Kubernetes
 
-In this guide you will install the OTel demo application using Helm and send telemetry data to SigNoz hosted with Kubernetes, referred as SigNoz [Kubernetes] from now.
+In this guide you will install the OTel demo application using Helm and send telemetry data to Trueview hosted with Kubernetes, referred as Trueview [Kubernetes] from now.
 
 ## Prerequisites
 
@@ -141,12 +141,12 @@ In this guide you will install the OTel demo application using Helm and send tel
 
 
 ## Install Helm Repo and Charts
-You’ll need to **install the Helm repository** to start sending data to SigNoz cloud.
+You’ll need to **install the Helm repository** to start sending data to Trueview cloud.
 
 ```sh
 helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
 ```
-The OpenTelemetry Collector’s configuration is exposed in the Helm chart. All additions made will be merged into the default configuration. We use this capability to add SigNoz as an exporter, and make pipelines as desired.
+The OpenTelemetry Collector’s configuration is exposed in the Helm chart. All additions made will be merged into the default configuration. We use this capability to add Trueview as an exporter, and make pipelines as desired.
 
 For this we have to create a `values.yaml` which will override the existing configurations that comes with the Helm chart.
 
@@ -165,14 +165,14 @@ default:
     - name: OTEL_COLLECTOR_NAME
       value: signoz-otel-collector.<namespace>.svc.cluster.local
 ```
-Replace namespace with your appropriate namespace. This file will replace the chart’s existing settings with our new ones, ensuring telemetry data is sent to SigNoz [Kubernetes].
+Replace namespace with your appropriate namespace. This file will replace the chart’s existing settings with our new ones, ensuring telemetry data is sent to Trueview [Kubernetes].
 
 > Note: When merging YAML values with Helm, objects are merged and arrays are replaced. The spanmetrics exporter must be included in the array of exporters for the traces pipeline if overridden. Not including this exporter will result in an error.
 
 <br>
-<u>To send data to SigNoz cloud</u>
+<u>To send data to Trueview cloud</u>
 
-If you wish to send data to cloud instance of SigNoz, we have to create a `values.yaml` which will override the existing configurations that comes with the Helm chart.
+If you wish to send data to cloud instance of Trueview, we have to create a `values.yaml` which will override the existing configurations that comes with the Helm chart.
 
 ```sh
 opentelemetry-collector:
@@ -223,17 +223,17 @@ To expose the OTel demo app UI [frontend-proxy service] use the following comman
 ```sh
 kubectl port-forward svc/my-otel-demo-frontend-proxy 8080:8081
 ```
-Navigate to `http://localhost:8081/` where you can access OTel demo app UI. Generate some traffic to send to SigNoz [Kubernetes].
+Navigate to `http://localhost:8081/` where you can access OTel demo app UI. Generate some traffic to send to Trueview [Kubernetes].
 
 
 
-## Monitor with SigNoz [Kubernetes]
+## Monitor with Trueview [Kubernetes]
 Signoz exposes it's UI at `http://localhost:8080/`. You should be able to see multiple services listed down as shown in the snapshot below.
 
 
 ![](/docs/img/otel-demo-services.png)
 
-This verifies that your OTel demo app is successfully sending telemetry data to SigNoz [Kubernetes] as expected. 
+This verifies that your OTel demo app is successfully sending telemetry data to Trueview [Kubernetes] as expected. 
 
 
 
@@ -243,4 +243,4 @@ This verifies that your OTel demo app is successfully sending telemetry data to 
 
 Don't forget to check our OpenTelemetry [track](https://signoz.io/resource-center/opentelemetry/), guaranteed to take you from a newbie to sensei in no time!
 
-Also from a fellow OTel fan to another, we at [SigNoz](https://signoz.io/) are building an open-source, OTel native, observability platform (one of its kind). So, show us love - star us on [GitHub](https://github.com/SigNoz/signoz), nitpick our [docs](https://signoz.io/docs/introduction/), or just tell your app we’re the ones who’ll catch its crashes mid-flight and finally shush all the 3am panic calls!
+Also from a fellow OTel fan to another, we at [Trueview](https://signoz.io/) are building an open-source, OTel native, observability platform (one of its kind). So, show us love - star us on [GitHub](https://github.com/Trueview/signoz), nitpick our [docs](https://signoz.io/docs/introduction/), or just tell your app we’re the ones who’ll catch its crashes mid-flight and finally shush all the 3am panic calls!

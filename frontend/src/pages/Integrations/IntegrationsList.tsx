@@ -15,9 +15,9 @@ import { handleContactSupport, INTEGRATION_TYPES } from './utils';
 export const AWS_INTEGRATION = {
 	id: INTEGRATION_TYPES.AWS_INTEGRATION,
 	title: 'Amazon Web Services',
-	description: 'One-click setup for AWS monitoring with SigNoz',
+	description: 'One-click setup for AWS monitoring with Trueview',
 	author: {
-		name: 'SigNoz',
+		name: 'Trueview',
 		email: 'integrations@signoz.io',
 		homepage: 'https://signoz.io',
 	},

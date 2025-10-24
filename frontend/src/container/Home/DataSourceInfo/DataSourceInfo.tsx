@@ -13,15 +13,15 @@ import { LicensePlatform } from 'types/api/licensesV3/getActive';
 import { DOCS_LINKS } from '../constants';
 
 function DataSourceInfo({
-	dataSentToSigNoz,
+	dataSentToTrueview,
 	isLoading,
 }: {
-	dataSentToSigNoz: boolean;
+	dataSentToTrueview: boolean;
 	isLoading: boolean;
 }): JSX.Element {
 	const { activeLicense } = useAppContext();
 
-	const notSendingData = !dataSentToSigNoz;
+	const notSendingData = !dataSentToTrueview;
 
 	const isEnabled =
 		activeLicense && activeLicense.platform === LicensePlatform.CLOUD;
@@ -60,13 +60,13 @@ function DataSourceInfo({
 	const renderNotSendingData = (): JSX.Element => (
 		<>
 			<Typography className="welcome-title">
-				Hello there, Welcome to your SigNoz workspace
+				Hello there, Welcome to your Trueview workspace
 			</Typography>
 
 			<Typography className="welcome-description">
 				You’re not sending any data yet. <br />
-				SigNoz is so much better with your data ⎯ start by sending your telemetry
-				data to SigNoz.
+				Trueview is so much better with your data ⎯ start by sending your telemetry
+				data to Trueview.
 			</Typography>
 
 			<Card className="welcome-card">
@@ -153,7 +153,7 @@ function DataSourceInfo({
 	const renderDataReceived = (): JSX.Element => (
 		<>
 			<Typography className="welcome-title">
-				Hello there, Welcome to your SigNoz workspace
+				Hello there, Welcome to your Trueview workspace
 			</Typography>
 
 			{!isErrorDeploymentsData && deploymentsData && (
@@ -207,7 +207,7 @@ function DataSourceInfo({
 				</>
 			)}
 
-			{!isLoading && dataSentToSigNoz && renderDataReceived()}
+			{!isLoading && dataSentToTrueview && renderDataReceived()}
 
 			{!isLoading && notSendingData && renderNotSendingData()}
 		</div>

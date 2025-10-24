@@ -190,10 +190,10 @@ function OptimiseSignozNeeds({
 	return (
 		<div className="questions-container">
 			<Typography.Title level={3} className="title">
-				Optimize SigNoz for Your Needs
+				Optimize Trueview for Your Needs
 			</Typography.Title>
 			<Typography.Paragraph className="sub-title">
-				Give us a quick sense of your scale so SigNoz can keep up!
+				Give us a quick sense of your scale so Trueview can keep up!
 			</Typography.Paragraph>
 
 			<div className="questions-form-container">

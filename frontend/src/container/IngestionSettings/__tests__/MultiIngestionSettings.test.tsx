@@ -15,7 +15,7 @@ describe('MultiIngestionSettings Page', () => {
 		expect(screen.getByText('Ingestion Keys')).toBeInTheDocument();
 
 		expect(
-			screen.getByText('Create and manage ingestion keys for the SigNoz Cloud'),
+			screen.getByText('Create and manage ingestion keys for the Trueview Cloud'),
 		).toBeInTheDocument();
 
 		const aboutKeyslink = screen.getByRole('link', { name: /Learn more/i });

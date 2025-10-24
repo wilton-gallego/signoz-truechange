@@ -18,7 +18,7 @@ export function ComingSoon(): JSX.Element {
 						target="_blank"
 						onClick={(e): void => e.stopPropagation()}
 					>
-						SigNoz Community
+						Trueview Community
 					</a>
 				</div>
 			}

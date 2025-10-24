@@ -602,14 +602,14 @@ function AppLayout(props: AppLayoutProps): JSX.Element {
 		<div className="workspace-restricted-banner">
 			{activeLicense?.state === LicenseState.TERMINATED && (
 				<>
-					Your SigNoz license is terminated, enterprise features have been disabled.
+					Your Trueview license is terminated, enterprise features have been disabled.
 					Please contact support at{' '}
 					<a href="mailto:support@signoz.io">support@signoz.io</a> for new license
 				</>
 			)}
 			{activeLicense?.state === LicenseState.EXPIRED && (
 				<>
-					Your SigNoz license has expired. Please contact support at{' '}
+					Your Trueview license has expired. Please contact support at{' '}
 					<a href="mailto:support@signoz.io">support@signoz.io</a> for renewal to
 					avoid termination of license as per our{' '}
 					<a
@@ -623,7 +623,7 @@ function AppLayout(props: AppLayoutProps): JSX.Element {
 			)}
 			{activeLicense?.state === LicenseState.CANCELLED && (
 				<>
-					Your SigNoz license is cancelled. Please contact support at{' '}
+					Your Trueview license is cancelled. Please contact support at{' '}
 					<a href="mailto:support@signoz.io">support@signoz.io</a> for reactivation
 					to avoid termination of license as per our{' '}
 					<a
@@ -638,7 +638,7 @@ function AppLayout(props: AppLayoutProps): JSX.Element {
 
 			{activeLicense?.state === LicenseState.DEFAULTED && (
 				<>
-					Your SigNoz license is defaulted. Please clear the bill to continue using
+					Your Trueview license is defaulted. Please clear the bill to continue using
 					the enterprise features. Contact support at{' '}
 					<a href="mailto:support@signoz.io">support@signoz.io</a> to avoid
 					termination of license as per our{' '}
@@ -654,7 +654,7 @@ function AppLayout(props: AppLayoutProps): JSX.Element {
 
 			{activeLicense?.state === LicenseState.EVALUATION_EXPIRED && (
 				<>
-					Your SigNoz trial has ended. Please contact support at{' '}
+					Your Trueview trial has ended. Please contact support at{' '}
 					<a href="mailto:support@signoz.io">support@signoz.io</a> for next steps to
 					avoid termination of license as per our{' '}
 					<a
@@ -773,7 +773,7 @@ function AppLayout(props: AppLayoutProps): JSX.Element {
 									<a className="upgrade-link" onClick={handleUpgrade}>
 										upgrade
 									</a>
-									to continue using SigNoz features.
+									to continue using Trueview features.
 									<span className="refresh-payment-status">
 										{' '}
 										| Already upgraded? <RefreshPaymentStatus type="text" />
@@ -803,7 +803,7 @@ function AppLayout(props: AppLayoutProps): JSX.Element {
 									<a className="upgrade-link" onClick={handleFailedPayment}>
 										pay the bill
 									</a>
-									to continue using SigNoz features.
+									to continue using Trueview features.
 									<span className="refresh-payment-status">
 										{' '}
 										| Already paid? <RefreshPaymentStatus type="text" />

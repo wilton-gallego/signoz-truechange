@@ -11,7 +11,7 @@
 	{
 		"dataSource": "migrate-from-datadog",
 		"label": "From Datadog",
-		"tags": ["migrate to SigNoz"],
+		"tags": ["migrate to Trueview"],
 		"module": "home",
 		"relatedSearchKeywords": ["datadog", "opentelemetry"],
 		"imgUrl": "/Logos/datadog.svg",
@@ -20,7 +20,7 @@
 	{
 		"dataSource": "migrate-from-lgtm",
 		"label": "From Grafana",
-		"tags": ["migrate to SigNoz"],
+		"tags": ["migrate to Trueview"],
 		"module": "home",
 		"relatedSearchKeywords": [
 			"grafana",
@@ -36,7 +36,7 @@
 	{
 		"dataSource": "migrate-from-elk",
 		"label": "From ELK",
-		"tags": ["migrate to SigNoz"],
+		"tags": ["migrate to Trueview"],
 		"module": "home",
 		"relatedSearchKeywords": [
 			"elk",
@@ -54,7 +54,7 @@
 	{
 		"dataSource": "migrate-from-newrelic",
 		"label": "From New Relic",
-		"tags": ["migrate to SigNoz"],
+		"tags": ["migrate to Trueview"],
 		"module": "home",
 		"relatedSearchKeywords": [
 			"new relic",
@@ -70,8 +70,8 @@
 	},
 	{
 		"dataSource": "migrate-signoz-self-host-to-cloud",
-		"label": "From SigNoz Self-Host",
-		"tags": ["migrate to SigNoz"],
+		"label": "From Trueview Self-Host",
+		"tags": ["migrate to Trueview"],
 		"module": "home",
 		"relatedSearchKeywords": [
 			"signoz self-hosted",
@@ -84,13 +84,13 @@
 			"selfhosted signoz",
 			"self-host"
 		],
-		"imgUrl": "/Logos/signoz-brand-logo.svg",
+		"imgUrl": "/Logos/trueview-brand-logo.svg",
 		"link": "https://signoz.io/docs/migration/migrate-from-signoz-self-host-to-signoz-cloud/"
 	},
 	{
 		"dataSource": "migrate-from-existing-opentelemetry",
 		"label": "From Existing OpenTelemetry",
-		"tags": ["migrate to SigNoz"],
+		"tags": ["migrate to Trueview"],
 		"module": "home",
 		"relatedSearchKeywords": [
 			"apm migration",

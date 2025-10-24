@@ -14,7 +14,7 @@ export interface SignozDetails {
 	discoverSignoz: string | null;
 }
 
-interface AboutSigNozQuestionsProps {
+interface AboutTrueviewQuestionsProps {
 	signozDetails: SignozDetails;
 	setSignozDetails: (details: SignozDetails) => void;
 	onNext: () => void;
@@ -30,12 +30,12 @@ const interestedInOptions: Record<string, string> = {
 	correlateSignals: 'Correlate signals for faster troubleshooting',
 };
 
-export function AboutSigNozQuestions({
+export function AboutTrueviewQuestions({
 	signozDetails,
 	setSignozDetails,
 	onNext,
 	onBack,
-}: AboutSigNozQuestionsProps): JSX.Element {
+}: AboutTrueviewQuestionsProps): JSX.Element {
 	const [interestInSignoz, setInterestInSignoz] = useState<string[]>(
 		signozDetails?.interestInSignoz || [],
 	);
@@ -96,16 +96,16 @@ export function AboutSigNozQuestions({
 	return (
 		<div className="questions-container">
 			<Typography.Title level={3} className="title">
-				Tell Us About Your Interest in SigNoz
+				Tell Us About Your Interest in Trueview
 			</Typography.Title>
 			<Typography.Paragraph className="sub-title">
-				We&apos;d love to know a little bit about you and your interest in SigNoz
+				We&apos;d love to know a little bit about you and your interest in Trueview
 			</Typography.Paragraph>
 
 			<div className="questions-form-container">
 				<div className="questions-form">
 					<div className="form-group">
-						<div className="question">How did you first come across SigNoz?</div>
+						<div className="question">How did you first come across Trueview?</div>
 
 						<TextArea
 							className="discover-signoz-input"
@@ -118,7 +118,7 @@ export function AboutSigNozQuestions({
 					</div>
 
 					<div className="form-group">
-						<div className="question">What got you interested in SigNoz?</div>
+						<div className="question">What got you interested in Trueview?</div>
 						<div className="checkbox-grid">
 							{Object.keys(interestedInOptions).map((option: string) => (
 								<div key={option} className="checkbox-item">

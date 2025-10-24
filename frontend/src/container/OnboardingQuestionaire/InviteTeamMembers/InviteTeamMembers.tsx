@@ -191,7 +191,7 @@ function InviteTeamMembers({
 				Invite your team members
 			</Typography.Title>
 			<Typography.Paragraph className="sub-title">
-				The more your team uses SigNoz, the stronger your observability. Share
+				The more your team uses Trueview, the stronger your observability. Share
 				dashboards, collaborate on alerts, and troubleshoot faster together.
 			</Typography.Paragraph>
 
@@ -201,7 +201,7 @@ function InviteTeamMembers({
 						<div className="question-label">
 							Collaborate with your team
 							<div className="question-sub-label">
-								Invite your team to the SigNoz workspace
+								Invite your team to the Trueview workspace
 							</div>
 						</div>
 

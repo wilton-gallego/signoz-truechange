@@ -1,0 +1,52 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: trueview-schema-migrator-sync
+  namespace: trueview
+  labels:
+    app.kubernetes.io/component: schema-migrator
+    app.kubernetes.io/part-of: trueview-stack
+spec:
+  backoffLimit: 5
+  ttlSecondsAfterFinished: 3600
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: trueview-schema-migrator-sync
+        app.kubernetes.io/component: schema-migrator
+        app.kubernetes.io/part-of: trueview-stack
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: schema-migrator-sync
+          image: signoz/signoz-schema-migrator:v0.129.7
+          imagePullPolicy: IfNotPresent
+          command: ["sync", "--dsn=tcp://trueview-clickhouse:9000", "--up="]
+          resources: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trueview-schema-migrator-async
+  namespace: trueview
+  labels:
+    app.kubernetes.io/component: schema-migrator
+    app.kubernetes.io/part-of: trueview-stack
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: trueview-schema-migrator-async
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: trueview-schema-migrator-async
+        app.kubernetes.io/component: schema-migrator
+        app.kubernetes.io/part-of: trueview-stack
+    spec:
+      containers:
+        - name: schema-migrator-async
+          image: signoz/signoz-schema-migrator:v0.129.7
+          imagePullPolicy: IfNotPresent
+          command: ["async", "--dsn=tcp://trueview-clickhouse:9000", "--up="]
+      restartPolicy: Always

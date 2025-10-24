@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: trueview-query-config
+  namespace: trueview
+  labels:
+    app.kubernetes.io/component: query-service
+    app.kubernetes.io/part-of: trueview-stack
+data:
+  prometheus.yml: |
+    # Generated from deploy/common/signoz/prometheus.yml
+    global:
+      scrape_interval: 5s
+      evaluation_interval: 15s
+    alerting:
+      alertmanagers:
+        - static_configs: []
+    rule_files: []
+    scrape_configs: []
+    remote_read:
+      - url: tcp://trueview-clickhouse:9000/signoz_metrics

@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: trueview-clickhouse-data
+  namespace: trueview
+  labels:
+    app.kubernetes.io/component: clickhouse
+    app.kubernetes.io/part-of: trueview-stack
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: oci-bv
+  resources:
+    requests:
+      storage: 200Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: trueview-query-metadata
+  namespace: trueview
+  labels:
+    app.kubernetes.io/component: query-service
+    app.kubernetes.io/part-of: trueview-stack
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: oci-bv
+  resources:
+    requests:
+      storage: 10Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: trueview-zookeeper-data
+  namespace: trueview
+  labels:
+    app.kubernetes.io/component: zookeeper
+    app.kubernetes.io/part-of: trueview-stack
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: oci-bv
+  resources:
+    requests:
+      storage: 20Gi

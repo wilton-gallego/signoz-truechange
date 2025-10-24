@@ -79,3 +79,7 @@ For more details, please refer to the [Trueview documentation](https://signoz.io
 
 Go to our official documentation site [signoz.io/docs](https://signoz.io/docs) for more.
 
+
+## Kubernetes (Helm-free)
+
+For managed Kubernetes services like Oracle OKE, Trueview ships pre-rendered manifests under [`deploy/kubernetes-manifests`](./kubernetes-manifests). Apply them sequentially with `kubectl apply -f` (see the README in that directory for the exact order and caveats). The manifests create dedicated Services for the UI and OTLP collector so you can attach load balancers in cloud environments. Refer to [`deploy/oke/README.md`](./oke/README.md) for an end-to-end example tailored to OCI.
